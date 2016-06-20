@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
  
-s.name         = "NJAFetworking"
+s.name         = "NJAFNetworking"
 s.version      = "1.0.1"
 s.summary      = "基于AFNetworking框架的简单封装，POST请求，GET请求，上传文件，下载文件等。"
 s.homepage     = "https://niefuling.com/"
