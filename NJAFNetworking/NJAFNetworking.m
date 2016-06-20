@@ -694,7 +694,7 @@ static inline NSString *cachePath() {
                               success:(NJResponseSuccess)success
                                  fail:(NJResponseFail)fail {
     return [self requestWithUrl:url
-                   refreshCache:nil
+                   refreshCache:_shouldAutoEncode
                           iamge:image
                   uploadingFile:nil
                        filename:filename
@@ -715,7 +715,7 @@ static inline NSString *cachePath() {
                                 success:(NJResponseSuccess)success
                                    fail:(NJResponseFail)fail {
     return [self requestWithUrl:url
-                   refreshCache:nil
+                   refreshCache:_shouldAutoEncode
                           iamge:nil
                   uploadingFile:uploadingFile
                        filename:nil
@@ -736,7 +736,7 @@ static inline NSString *cachePath() {
                               success:(NJResponseSuccess)success
                                  fail:(NJResponseFail)fail {
     return [self requestWithUrl:url
-                   refreshCache:nil
+                   refreshCache:_shouldAutoEncode
                           iamge:nil
                   uploadingFile:nil
                        filename:nil
