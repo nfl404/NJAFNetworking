@@ -22,6 +22,7 @@
 ##  如何使用NJAFNetworking？
 - NJAFNetworking支持CocoaPods([CocoaPods是什么？](http://www.jianshu.com/p/e46d57ecc1f2))
 写在Podfile文件中，
+
         source 'https://github.com/CocoaPods/Specs.git'
         inhibit_all_warnings!
         target "这里写你的工程名字" do
