@@ -13,35 +13,19 @@
 
 ## NJAFNetworking究竟是什么？
 - 配置公共的请求头（可以不配置）
- 
-//更新请求接口基础url（如果服务器地址有多个）,@param baseUrl 请求接口基础url
 +(void)updateBaseUrl:(NSString *)baseUrl;
 
 
 - 更新请求接口基础url（如果服务器地址有多个，可以不配置）
- 
-        /**
-         *  更新请求接口基础url（如果服务器地址有多个）
-         *  @param baseUrl 请求接口基础url
-         */
-        + (void)updateBaseUrl:(NSString *)baseUrl;
++(void)updateBaseUrl:(NSString *)baseUrl;
 - GET请求接口
-        /**
-         *  GET请求接口
-         *  @param url          访问地址路径，如/user/index/login
-         *  @param refreshCache 是否刷新缓存，YES
-         *  @param params       需要传的参数，如@{@"user_id" :@(80011)}
-         *  @param progress     进度回调，
-         *  @param success      接口请求响应成功回调
-         *  @param fail         接口请求响应失败回调
-         *  @return             NSURLSessionTask
-         */
-        + (NJURLSessionTask *)getWithUrl:(NSString *)url
-                            refreshCache:(BOOL)refreshCache
-                                  params:(NSDictionary *)params
-                                progress:(NJLoadProgress)progress
-                                 success:(NJResponseSuccess)success
-                                    fail:(NJResponseFail)fail;
+
++(NJURLSessionTask *)getWithUrl:(NSString *)url
+                   refreshCache:(BOOL)refreshCache
+                         params:(NSDictionary *)params
+                       progress:(NJLoadProgress)progress
+                        success:(NJResponseSuccess)success
+                           fail:(NJResponseFail)fail;
 - POST请求接口
         /**
          *  POST请求接口
