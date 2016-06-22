@@ -13,99 +13,21 @@
 
 ## NJAFNetworking究竟是什么？
 - 配置公共的请求头（可以不配置）
-+(void)updateBaseUrl:(NSString *)baseUrl;
-
-
 - 更新请求接口基础url（如果服务器地址有多个，可以不配置）
-+(void)updateBaseUrl:(NSString *)baseUrl;
 - GET请求接口
-
-+(NJURLSessionTask *)getWithUrl:(NSString *)url
-                   refreshCache:(BOOL)refreshCache
-                         params:(NSDictionary *)params
-                       progress:(NJLoadProgress)progress
-                        success:(NJResponseSuccess)success
-                           fail:(NJResponseFail)fail;
 - POST请求接口
-        /**
-         *  POST请求接口
-         *  @param url          访问地址路径，如/user/index/login
-         *  @param refreshCache 是否刷新缓存，YES
-         *  @param params       需要传的参数，如@{@"user_id" :@(80011)}
-         *  @param progress     进度回调，
-         *  @param success      接口请求响应成功回调
-         *  @param fail         接口请求响应失败回调
-         *  @return             NSURLSessionTask
-         */
-        + (NJURLSessionTask *)postWithUrl:(NSString *)url
-                             refreshCache:(BOOL)refreshCache
-                                   params:(NSDictionary *)params
-                                 progress:(NJLoadProgress)progress
-                                  success:(NJResponseSuccess)success
-                                     fail:(NJResponseFail)fail;
 - 图片上传接口
-        /**
-         *  图片上传接口
-         *  @param image        图片对象
-         *  @param url          上传图片路径，如/user/images
-         *  @param filename     文件名字，默认为当前时间yyyyMMddHHmmss.jpg
-         *  @param name         约定关联名称，如image
-         *  @param mimeType     默认iamge/jpeg
-         *  @param parameters   需要传的参数，如@{@"user_id" :@(80011)}
-         *  @param progress     上传进度回调
-         *  @param success      上传成功回调
-         *  @param fail         上传失败回调
-         *  @return             NSURLSessionTask
-         */
-        + (NJURLSessionTask *)uploadWithImage:(UIImage *)image
-                                          url:(NSString *)url
-                                     filename:(NSString *)filename
-                                         name:(NSString *)name
-                                     mimeType:(NSString *)mimeType
-                                   parameters:(NSDictionary *)parameters
-                                     progress:(NJLoadProgress)progress
-                                      success:(NJResponseSuccess)success
-                                         fail:(NJResponseFail)fail;
 - 上传文件
-        /**
-         *  上传文件
-         *  @param url              上传文件路径，如/user/images
-         *  @param uploadingFile    待上传文件路径，如/user/images
-         *  @param progress         进度回调
-         *  @param success          上传成功回调
-         *  @param fail             上传失败回调
-         *  @return                 NSURLSessionTask
-         */
-        + (NJURLSessionTask *)uploadFileWithUrl:(NSString *)url
-                                  uploadingFile:(NSString *)uploadingFile
-                                       progress:(NJLoadProgress)progress
-                                        success:(NJResponseSuccess)success
-                                           fail:(NJResponseFail)fail;
 - 下载文件
-        /**
-         *  下载文件
-         *  @param url              下载文件URL
-         *  @param saveToPath       下载到那个路径下
-         *  @param progress         下载进度
-         *  @param success          下载成功后的回调
-         *  @param fail             下载失败后的回调
-         *  @return NSURLSessionTask
-         */
-        + (NJURLSessionTask *)downloadWithUrl:(NSString *)url
-                                   saveToPath:(NSString *)saveToPath
-                                     progress:(NJLoadProgress)progress
-                                      success:(NJResponseSuccess)success
-                                         fail:(NJResponseFail)fail;
-
 ##  如何使用NJAFNetworking？
 - NJAFNetworking支持CocoaPods([CocoaPods是什么？](http://www.jianshu.com/p/e46d57ecc1f2))
 写在Podfile文件中，
-        source 'https://github.com/CocoaPods/Specs.git'
-        inhibit_all_warnings!
-
-        target "这里写你的工程名字" do
-        pod 'NJAFNetworking', '~> 1.0.1'
-        end
+   source 'https://github.com/CocoaPods/Specs.git'
+   inhibit_all_warnings!
+     
+   target "这里写你的工程名字" do
+   pod 'NJAFNetworking', '~> 1.0.1'
+  end
 
 - 下载NJAFNetworking（[下载地址](https://github.com/nfl404/NJAFNetworking)）
 下载完后将NJAFNetworking文件夹拖入工程中即可。
