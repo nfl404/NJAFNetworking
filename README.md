@@ -19,6 +19,8 @@
 - 图片上传接口
 - 上传文件
 - 下载文件
+ 
+
 ##  如何使用NJAFNetworking？
 - NJAFNetworking支持CocoaPods([CocoaPods是什么？](http://www.jianshu.com/p/e46d57ecc1f2))
  
