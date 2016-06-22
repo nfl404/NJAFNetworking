@@ -14,9 +14,10 @@
 ## NJAFNetworking究竟是什么？
 - 配置公共的请求头（可以不配置）
  
-  //更新请求接口基础url（如果服务器地址有多个）
-  //@param baseUrl 请求接口基础url
-  + (void)updateBaseUrl:(NSString *)baseUrl;
+
+    //更新请求接口基础url（如果服务器地址有多个）
+    //@param baseUrl 请求接口基础url
+     + (void)updateBaseUrl:(NSString *)baseUrl;
 
 
 - 更新请求接口基础url（如果服务器地址有多个，可以不配置）
