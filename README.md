@@ -13,7 +13,6 @@
 
 ## NJAFNetworking究竟是什么？
 - 配置公共的请求头（可以不配置）
- 
 
         /**
          *  更新请求接口基础url（如果服务器地址有多个）
@@ -22,6 +21,13 @@
         + (void)updateBaseUrl:(NSString *)baseUrl;
 
 - 更新请求接口基础url（如果服务器地址有多个，可以不配置）
+ 
+        /**
+         *  配置公共的请起头，用于区分请求来源，需要与服务器约定好
+         *  @param httpHeaders      如@{"client" : "iOS"}
+         */
+        + (void)configCommonHttpHeaders:(NSDictionary *)httpHeaders;
+
 - GET请求接口
 - POST请求接口
 - 图片上传接口
