@@ -132,12 +132,12 @@
 
   写在Podfile文件中，
 
-     source 'https://github.com/CocoaPods/Specs.git'
-     inhibit_all_warnings!
+      source 'https://github.com/CocoaPods/Specs.git'
+      inhibit_all_warnings!
        
-     target "这里写你的工程名字" do
-     pod 'NJAFNetworking', '~> 1.0.1'
-     end
+      target "这里写你的工程名字" do
+      pod 'NJAFNetworking', '~> 1.0.1'
+      end
 
 - 下载NJAFNetworking（[下载地址](https://github.com/nfl404/NJAFNetworking)）
 下载完后将NJAFNetworking文件夹拖入工程中即可。
