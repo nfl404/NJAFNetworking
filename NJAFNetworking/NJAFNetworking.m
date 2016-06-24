@@ -454,7 +454,9 @@ static inline NSString *cachePath() {
                   fail:(NJResponseFail)fail {
     session = [manager GET:url parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
         // 请求进度
-        progress(downloadProgress.completedUnitCount, downloadProgress.totalUnitCount);
+        if (progress) {
+            progress(downloadProgress.completedUnitCount, downloadProgress.totalUnitCount);
+        }
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         // 成功回调
         [self successResponse:responseObject callback:success];
@@ -479,7 +481,9 @@ static inline NSString *cachePath() {
                   fail:(NJResponseFail)fail {
     session = [manager POST:url parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
         // 请求进度
-        progress(uploadProgress.completedUnitCount, uploadProgress.totalUnitCount);
+        if (progress) {
+            progress(uploadProgress.completedUnitCount, uploadProgress.totalUnitCount);
+        }
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [self cacheResponseObject:responseObject request:task.currentRequest  parameters:params];
         // 成功回调
@@ -534,7 +538,9 @@ static inline NSString *cachePath() {
         [formData appendPartWithFileData:imageData name:name fileName:imageFileName mimeType:mimeType];
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         // 上传进度
-        progress(uploadProgress.completedUnitCount, uploadProgress.totalUnitCount);
+        if (progress) {
+            progress(uploadProgress.completedUnitCount, uploadProgress.totalUnitCount);
+        }
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         // 删除任务
         [[self allTasks] removeObject:task];
@@ -576,7 +582,9 @@ static inline NSString *cachePath() {
     }
     NSURLRequest *request = [NSURLRequest requestWithURL:uploadURL];
     [manager uploadTaskWithRequest:request fromFile:[NSURL URLWithString:uploadingFile] progress:^(NSProgress * _Nonnull uploadProgress) {
-        progress(uploadProgress.completedUnitCount, uploadProgress.totalUnitCount);
+        if (progress) {
+            progress(uploadProgress.completedUnitCount, uploadProgress.totalUnitCount);
+        }
     } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         [[self allTasks] removeObject:session];
         if (error) {
@@ -613,7 +621,9 @@ static inline NSString *cachePath() {
     
     
     session = [manager downloadTaskWithRequest:downloadRequest progress:^(NSProgress * _Nonnull downloadProgress) {
-        progress(downloadProgress.completedUnitCount, downloadProgress.totalUnitCount);
+        if (progress) {
+            progress(downloadProgress.completedUnitCount, downloadProgress.totalUnitCount);
+        }
     } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
         return [NSURL URLWithString:saveToPath];
     } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {

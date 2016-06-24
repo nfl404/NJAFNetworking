@@ -36,7 +36,9 @@ typedef NS_ENUM(NSUInteger, NJRequestType) {
 };
 
 typedef NSURLSessionTask NJURLSessionTask;
+
 typedef void(^NJResponseSuccess)(NJServerRequestsStatus status, NJAFNetworkReachabilityStatus reachability,  id response);
+
 typedef void(^NJResponseFail)(NJServerRequestsStatus status, NJAFNetworkReachabilityStatus reachability, id response, NSError *error);
 
 
@@ -53,7 +55,7 @@ typedef void(^NJLoadProgress)(int_fast64_t bytesRead, int_fast64_t totalBytesRea
 
 
 /**
- *  配置公共的请起头，用于区分请求来源，需要与服务器约定好
+ *  配置公共的请求头，用于区分请求来源，需要与服务器约定好
  *  @param httpHeaders      如@{"client" : "iOS"}
  */
 + (void)configCommonHttpHeaders:(NSDictionary *)httpHeaders;
