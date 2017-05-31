@@ -41,7 +41,7 @@
 static NSString *_privateNetworkBaseUrl = nil;              // 请求基础url，默认nil
 static NSDictionary *_httpHeaders = nil;                    // http头，默认nil
 static NJResponseType _responseType = NJResponseTypeJSON;   // 响应类型，默认JSON
-static NJRequestType  _requestType  = NJRequestTypeJSON;    // 请求类型，默认JSON
+static NJRequestType  _requestType  = NJRequestTypePlainText;    // 请求类型，默认JSON
 static NJAFNetworkReachabilityStatus _networkStatus = NJAFNetworkReachabilityStatusUnkonw;  // 网络状态，默认未知网络
 static NSTimeInterval _timeout = 60.0f;                     // 请求超时时间，默认60s
 static BOOL _shouldAutoEncode = NO;                         // 编码，默认NO
